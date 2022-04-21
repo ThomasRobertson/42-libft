@@ -1,22 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_memalloc_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:02:28 by troberts          #+#    #+#             */
-/*   Updated: 2022/04/18 22:11:35 by troberts         ###   ########.fr       */
+/*   Updated: 2022/04/21 21:55:13 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Prototype void * ft_memalloc(size_t size);
-// Description Allocates (with malloc(3)) and returns a “fresh” memory
-// area. The memory allocated is initialized to 0. If the allocation
-// fails, the function returns NULL.
-// Param. #1 The size of the memory that needs to be allocated.
-// Return value The allocated memory area.
-// Libc functions malloc(3)
 
 #include "libft.h"
 

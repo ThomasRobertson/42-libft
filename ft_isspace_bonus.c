@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_isspace_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 05:23:14 by troberts          #+#    #+#             */
-/*   Updated: 2022/04/10 23:18:51 by troberts         ###   ########.fr       */
+/*   Updated: 2022/04/21 21:54:57 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/**
- * @brief Checks for white-space characters.
- * 
- * @param c 
- * @return The values returned are nonzero if the character c falls into the
- * tested class, and zero if not.
- */
 
 int	ft_isspace(int c)
 {

@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 18:42:25 by troberts          #+#    #+#             */
-/*   Updated: 2022/04/18 18:32:01 by troberts         ###   ########.fr       */
+/*   Updated: 2022/04/21 21:56:01 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/**
- * @brief Create a new malloc string, with \0 everywhere.
- * 
- * @param size Lenght of new string, without the last \0.
- * @return char* 
- */
 
 char	*ft_strnew(size_t size)
 {
