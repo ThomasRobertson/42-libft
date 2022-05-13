@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 05:03:50 by troberts          #+#    #+#             */
-/*   Updated: 2022/04/19 22:19:38 by troberts         ###   ########.fr       */
+/*   Updated: 2022/05/13 22:12:07 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ static char	**nullerror(char **str, size_t i)
 		i--;
 		free(str[i]);
 	}
-	return (str);
+	free(str);
+	return (NULL);
 }
 
 static char	*ft_strncpy_static(char *dest, const char *src, size_t n)
