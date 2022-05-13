@@ -15,6 +15,7 @@
 *.swp
 *.gch
 *.o
+*.code-workspace
 
 # Specific files
 libft.a
@@ -22,3 +23,4 @@ libft.so
 
 # Specific folders
 libftTester
+.devcontainer

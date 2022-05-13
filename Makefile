@@ -6,7 +6,7 @@
 #    By: troberts <troberts@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by troberts          #+#    #+#              #
-#    Updated: 2022/04/21 00:23:35 by troberts         ###   ########.fr        #
+#    Updated: 2022/05/13 22:53:59 by troberts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,75 +26,74 @@ ARINDEX= -s
 #                                .C & .H FILES                                 #
 # **************************************************************************** #
 
-SRC=	ft_atoi.c \
-		ft_bzero.c \
-		ft_calloc.c  \
-		ft_isalnum.c  \
-		ft_isalpha.c  \
-		ft_isascii.c  \
-		ft_isdigit.c  \
-		ft_isprint.c  \
-		ft_itoa.c  \
-		ft_memccpy.c  \
-		ft_memchr.c  \
-		ft_memcmp.c  \
-		ft_memcpy.c  \
-		ft_memmove.c  \
-		ft_memset.c  \
-		ft_putchar_fd.c  \
-		ft_putendl_fd.c  \
-		ft_putendl.c  \
-		ft_putnbr_fd.c  \
-		ft_putstr_fd.c  \
-		ft_split.c  \
-		ft_strchr.c  \
-		ft_strdup.c  \
-		ft_strjoin.c  \
-		ft_strlcat.c  \
-		ft_strlcpy.c  \
-		ft_strlen.c  \
-		ft_strmapi.c  \
-		ft_strncmp.c  \
-		ft_strnstr.c  \
-		ft_strrchr.c  \
-		ft_striteri.c  \
-		ft_strtrim.c  \
-		ft_substr.c  \
-		ft_tolower.c  \
+SRC=	ft_atoi.c	\
+		ft_atol.c	\
+		ft_atoll.c	\
+		ft_bzero.c	\
+		ft_calloc.c	\
+		ft_charinset.c	\
+		ft_isalnum.c	\
+		ft_isalpha.c	\
+		ft_isascii.c	\
+		ft_isdigit.c	\
+		ft_isprint.c	\
+		ft_isspace.c	\
+		ft_itoa.c	\
+		ft_lstadd_back.c	\
+		ft_lstadd_front.c	\
+		ft_lstclear.c	\
+		ft_lstdelone.c	\
+		ft_lstiter.c	\
+		ft_lstlast.c	\
+		ft_lstmap.c	\
+		ft_lstnew.c	\
+		ft_lstsize.c	\
+		ft_memalloc.c	\
+		ft_memccpy.c	\
+		ft_memchr.c	\
+		ft_memcmp.c	\
+		ft_memcpy.c	\
+		ft_memdel.c	\
+		ft_memmove.c	\
+		ft_memset.c	\
+		ft_memrchr.c	\
+		ft_putchar.c	\
+		ft_putchar_fd.c	\
+		ft_putendl.c	\
+		ft_putendl_fd.c	\
+		ft_putnbr.c	\
+		ft_putnbr_fd.c	\
+		ft_putstr.c	\
+		ft_putstr_fd.c	\
+		ft_split.c	\
+		ft_strcat.c	\
+		ft_strchr.c	\
+		ft_strclr.c	\
+		ft_strcmp.c	\
+		ft_strcpy.c	\
+		ft_strdel.c	\
+		ft_strdup.c	\
+		ft_strequ.c	\
+		ft_striter.c	\
+		ft_striteri.c	\
+		ft_strjoin.c	\
+		ft_strlcat.c	\
+		ft_strlcpy.c	\
+		ft_strlen.c	\
+		ft_strmap.c	\
+		ft_strmapi.c	\
+		ft_strncat.c	\
+		ft_strncmp.c	\
+		ft_strncpy.c	\
+		ft_strnequ.c	\
+		ft_strnew.c	\
+		ft_strnstr.c	\
+		ft_strrchr.c	\
+		ft_strstr.c	\
+		ft_strtrim.c	\
+		ft_substr.c	\
+		ft_tolower.c	\
 		ft_toupper.c
-
-SRCBONUS=	ft_atol_bonus.c \
-			ft_atoll_bonus.c  \
-			ft_charinset_bonus.c  \
-			ft_isspace_bonus.c  \
-			ft_lstadd_back_bonus.c  \
-			ft_lstadd_front_bonus.c  \
-			ft_lstclear_bonus.c  \
-			ft_lstdelone_bonus.c  \
-			ft_lstiter_bonus.c  \
-			ft_lstlast_bonus.c  \
-			ft_lstmap_bonus.c  \
-			ft_lstnew_bonus.c  \
-			ft_lstsize_bonus.c  \
-			ft_memalloc_bonus.c  \
-			ft_memchr_bonus.c  \
-			ft_memdel_bonus.c  \
-			ft_putchar_bonus.c  \
-			ft_putnbr_bonus.c  \
-			ft_putstr_bonus.c  \
-			ft_strncat_bonus.c  \
-			ft_strncpy_bonus.c  \
-			ft_strcat_bonus.c  \
-			ft_strclr_bonus.c  \
-			ft_strcmp_bonus.c  \
-			ft_strcpy_bonus.c  \
-			ft_strdel_bonus.c  \
-			ft_strequ_bonus.c  \
-			ft_striter_bonus.c  \
-			ft_strmap_bonus.c  \
-			ft_strnequ_bonus.c  \
-			ft_strnew_bonus.c  \
-			ft_strstr_bonus.c
 
 # **************************************************************************** #
 #                                HEADER CONFIG                                 #
@@ -115,12 +114,6 @@ COLOR_END		= \033[m
 HEADER_LIBRARY =	@echo "${COLOR_YELLOW}\
 					\n/* ************************************************************************** */\
 					\n/*                          CREATING STATIC LIBRARY...                        */\
-					\n/* ************************************************************************** */\n\
-					${COLOR_END}"
-
-HEADER_BONUS =		@echo "${COLOR_GREEN}\
-					\n/* ************************************************************************** */\
-					\n/*                         ADDING BONUSES TO LIBRARY...                       */\
 					\n/* ************************************************************************** */\n\
 					${COLOR_END}"
 
@@ -173,8 +166,6 @@ header_assemble:
 
 OBJ= $(SRC:.c=.o)
 
-OBJBONUS= $(SRCBONUS:.c=.o)
-
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
@@ -183,16 +174,9 @@ $(NAME): $(OBJ)
 	$(AR) $(ARARCH) $@ $^
 	$(AR) $(ARINDEX) $@
 
-bonus: header $(OBJBONUS)
-	$(HEADER_BONUS)
-	$(AR) $(ARARCH) $(NAME) $(OBJBONUS)
-	$(AR) $(ARINDEX) $(NAME)
-
-complete: all bonus
-
 clean: header
 	${HEADER_CLEAN}
-	rm -f $(OBJ) $(OBJBONUS)
+	rm -f $(OBJ)
 
 fclean: header clean
 	${HEADER_FCLEAN}
@@ -205,4 +189,4 @@ norm: header
 	norminette -R CheckForbiddenSourceHeader *.c
 	norminette -R CheckDefine *.h
 
-.PHONY: all clean fclean re norm bonus complete header
+.PHONY: all clean fclean re norm header
