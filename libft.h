@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/05/13 22:27:45 by troberts         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:51:32 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -703,15 +703,6 @@ long		ft_atol(const char *nptr);
 ** @return long long
 */
 long long	ft_atoll(const char *nptr);
-
-/*
-** @brief check if the char c is in the set
-** 
-** @param c char to search
-** @param set string of the set
-** @return int non-zero if find, zero if not find
-*/
-int			ft_charinset(char c, char const *set);
 
 /*
 ** @brief Outputs the integer 'n' to the stdout
