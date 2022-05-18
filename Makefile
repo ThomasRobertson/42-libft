@@ -6,7 +6,7 @@
 #    By: troberts <troberts@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by troberts          #+#    #+#              #
-#    Updated: 2022/05/13 22:53:59 by troberts         ###   ########.fr        #
+#    Updated: 2022/05/18 21:19:54 by troberts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,6 @@ SRC=	ft_atoi.c	\
 		ft_atoll.c	\
 		ft_bzero.c	\
 		ft_calloc.c	\
-		ft_charinset.c	\
 		ft_isalnum.c	\
 		ft_isalpha.c	\
 		ft_isascii.c	\
