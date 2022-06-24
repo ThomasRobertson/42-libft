@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:30:43 by troberts          #+#    #+#             */
-/*   Updated: 2022/04/10 01:03:29 by troberts         ###   ########.fr       */
+/*   Updated: 2022/06/16 02:45:10 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, 0, n);
+	size_t	i;
+
+	i = 0;
+	while (n > i)
+	{
+		((unsigned char *)s)[i] = 0;
+		i++;
+	}
 }
