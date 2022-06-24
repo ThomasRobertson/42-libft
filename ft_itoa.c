@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 19:59:24 by troberts          #+#    #+#             */
-/*   Updated: 2022/04/18 23:18:23 by troberts         ###   ########.fr       */
+/*   Updated: 2022/05/02 15:46:35 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 	unsigned int	nbr;
 
 	len = nbrlen(n);
-	str = (char *)malloc(sizeof(*str) * (len + 1));
+	str = malloc(sizeof(*str) * (len + 1));
 	if (str == NULL)
 		return (NULL);
 	str[len] = 0;
