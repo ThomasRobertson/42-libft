@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:28:17 by troberts          #+#    #+#             */
-/*   Updated: 2022/04/18 23:20:02 by troberts         ###   ########.fr       */
+/*   Updated: 2022/06/16 03:02:35 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s == NULL)
-		return ;
 	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }

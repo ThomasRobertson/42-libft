@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:24:42 by troberts          #+#    #+#             */
-/*   Updated: 2022/04/18 23:19:48 by troberts         ###   ########.fr       */
+/*   Updated: 2022/06/16 03:02:25 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s == NULL)
-		return ;
 	write(fd, s, ft_strlen(s));
 }
