@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/05/18 19:51:32 by troberts         ###   ########.fr       */
+/*   Updated: 2022/07/12 17:03:37 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,31 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define GNL_BUFFER_SIZE 4096
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+/*
+** @brief Printf, except it's my own. Support c(har), s(tring), p(ointer),
+** d(igit), i(nt), u(nsigned int), x(lower base 16), X(upper base 16),
+** %(print %).
+** 
+** @param ... "string, %FLAG", variable_flag
+** @return int Number of bytes displayed.
+*/
+int			ft_printf(const char *fmt, ...);
+
+/*
+** @brief Get the next line of a file descriptor WITH the newline.
+** 
+** @param fd file descriptor of file to read
+** @return char* line that's been read, or NULL if EOF or error
+*/
+char		*get_next_line(int fd);
 
 /* ************************************************************************** */
 /*                                   PART 1                                   */
@@ -605,9 +625,9 @@ void		ft_lstadd_front(t_list **lst, t_list *new);
 ** @brief Counts the number of nodes in a list
 ** 
 ** @param lst The beginning of the list
-** @return int The length of the list
+** @return size_t The length of the list
 */
-int			ft_lstsize(t_list *lst);
+size_t		ft_lstsize(t_list *lst);
 
 /*
 ** @brief Returns the last node of the list

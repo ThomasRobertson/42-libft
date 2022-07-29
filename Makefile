@@ -6,7 +6,7 @@
 #    By: troberts <troberts@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by troberts          #+#    #+#              #
-#    Updated: 2022/06/24 12:54:26 by troberts         ###   ########.fr        #
+#    Updated: 2022/07/11 16:39:38 by troberts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,17 @@ SRC=	$(SRC_DIR)/ft_atoi.c	\
 		$(SRC_DIR)/ft_memcpy.c	\
 		$(SRC_DIR)/ft_memdel.c	\
 		$(SRC_DIR)/ft_memmove.c	\
-		$(SRC_DIR)/ft_memset.c	\
 		$(SRC_DIR)/ft_memrchr.c	\
+		$(SRC_DIR)/ft_memset.c	\
+		$(SRC_DIR)/ft_printf_itoa_nbrlen.c	\
+		$(SRC_DIR)/ft_printf_print_char.c	\
+		$(SRC_DIR)/ft_printf_print_int.c	\
+		$(SRC_DIR)/ft_printf_print_lower_hex.c	\
+		$(SRC_DIR)/ft_printf_print_ptr.c	\
+		$(SRC_DIR)/ft_printf_print_str.c	\
+		$(SRC_DIR)/ft_printf_print_unsigned.c	\
+		$(SRC_DIR)/ft_printf_print_upper_hex.c	\
+		$(SRC_DIR)/ft_printf.c	\
 		$(SRC_DIR)/ft_putchar.c	\
 		$(SRC_DIR)/ft_putchar_fd.c	\
 		$(SRC_DIR)/ft_putendl.c	\
@@ -96,7 +105,9 @@ SRC=	$(SRC_DIR)/ft_atoi.c	\
 		$(SRC_DIR)/ft_strtrim.c	\
 		$(SRC_DIR)/ft_substr.c	\
 		$(SRC_DIR)/ft_tolower.c	\
-		$(SRC_DIR)/ft_toupper.c
+		$(SRC_DIR)/ft_toupper.c	\
+		$(SRC_DIR)/get_next_line.c
+
 
 OBJ=	$(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
@@ -164,39 +175,39 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(HEADER)
 	$(HEADER_LIBRARY)
-	$(AR) $(ARARCH) $@ $^
-	$(AR) $(ARINDEX) $@
+	@$(AR) $(ARARCH) $@ $^
+	@$(AR) $(ARINDEX) $@
 
 $(OBJ): | $(OBJ_DIR)
 
 $(OBJ_DIR):
-	mkdir -p $@
+	@mkdir -p $@
 
 $(OBJ): $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 header:
 	$(HEADER)
 
 cleanobj:
 	${HEADER_CLEAN}
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 cleanobjdir: cleanobj
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 clean: header cleanobjdir
 	
 fclean: header clean
 	${HEADER_FCLEAN}
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 norm: header
 	${HEADER_NORM}
 	@echo "$(COLOR_CYAN)"
-	norminette $(SRC_DIR)
+	norminette $(SRC_DIR) | awk "!/: OK!/"
 	@echo "$(COLOR_PURPLE)"
-	norminette $(INCLUDES)
+	norminette $(INCLUDES) | awk "!/: OK!/"
 	@echo "$(COLOR_END)"
 
 re: header fclean all
