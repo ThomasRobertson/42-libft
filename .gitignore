@@ -16,6 +16,7 @@
 *.gch
 *.o
 *.code-workspace
+.DS_Store
 
 # Specific files
 libft.a
