@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/07/30 17:34:13 by troberts         ###   ########.fr       */
+/*   Updated: 2022/07/30 17:42:35 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -421,7 +421,7 @@ char		*ft_strtrim(char const *s1, char const *set);
  * @return char * The array of new strings resulting from the split or NULL if
  * the allocation fails
  */
-char		 *ft_split(char const *s, char c);
+char		**ft_split(char const *s, char c);
 
 /**
  * @brief Allocates (with malloc(3)) and returns a string representing the
@@ -507,7 +507,7 @@ void		*ft_memalloc(size_t size);
  * 
  * @param ap A pointer's address that needs its memory freed
  */
-void		ft_memdel(void  *ap);
+void		ft_memdel(void **ap);
 
 /**
  * @brief Allocates (with malloc(3)) and returns a "fresh" string ending with
@@ -526,7 +526,7 @@ char		*ft_strnew(size_t size);
  * @param as The string's address that needs to be freed and its pointer set
 to NULL
  */
-void		ft_strdel(char  *as);
+void		ft_strdel(char **as);
 
 /**
  * @brief Sets every character of the string to the value '\0'
@@ -619,7 +619,7 @@ t_list		*ft_lstnew(void *content);
  * @param lst The address of a pointer to the first link of a list
  * @param new The address of a pointer to the node to be added to the list
  */
-void		ft_lstadd_front(t_list  *lst, t_list *new);
+void		ft_lstadd_front(t_list **lst, t_list *new);
 
 /**
  * @brief Counts the number of nodes in a list
@@ -643,7 +643,7 @@ t_list		*ft_lstlast(t_list *lst);
  * @param lst The address of a pointer to the first link of a list
  * @param new The address of a pointer to the node to be added to the list
  */
-void		ft_lstadd_back(t_list  *lst, t_list *new);
+void		ft_lstadd_back(t_list **lst, t_list *new);
 
 /**
  * @brief Takes as a parameter a node and frees the memory of the node's content
@@ -664,7 +664,7 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
  * @param del The address of the function used to delete the content of the
  * node
  */
-void		ft_lstclear(t_list  *lst, void (*del)(void *));
+void		ft_lstclear(t_list **lst, void (*del)(void *));
 
 /**
  * @brief Iterates the list 'lst' and applies the function 'f' on the content
