@@ -10,23 +10,27 @@
 
 <p align="center">
   <a href="https://github.com/ThomasRobertson/42-libft">
-    <img src="https://img.shields.io/tokei/lines/github/ThomasRobertson/42-libft?style=flat-square"
+    <img src="https://tokei.rs/b1/github/ThomasRobertson/42-libft"
          alt="Line of Code">
   </a>
   <a href="https://github.com/ThomasRobertson/42-libft">
-    <img src="https://img.shields.io/github/languages/code-size/ThomasRobertson/42-libft?style=flat-square"
+    <img src="https://img.shields.io/github/languages/code-size/ThomasRobertson/42-libft"
          alt="Size">
   </a>
   <a href="https://github.com/ThomasRobertson/42-libft">
-    <img src="https://img.shields.io/github/license/ThomasRobertson/42-libft?style=flat-square"
+    <img src="https://img.shields.io/github/languages/top/ThomasRobertson/42-libft"
          alt="License">
   </a>
   <a href="https://github.com/ThomasRobertson/42-libft">
-    <img src="https://img.shields.io/github/languages/top/ThomasRobertson/42-libft?style=flat-square"
+    <img src="https://img.shields.io/github/license/ThomasRobertson/42-libft"
          alt="License">
   </a>
   <a href="https://github.com/ThomasRobertson/42-libft/actions/workflows/norminette-action.yml">
-    <img src="https://github.com/ThomasRobertson/42-libft/actions/workflows/norminette-action.yml/badge.svg"
+    <img src="https://github.com/ThomasRobertson/42-libft/workflows/Build/badge.svg"
+         alt="Norminette Action">
+  </a> 
+  <a href="https://github.com/ThomasRobertson/42-libft/actions/workflows/norminette-action.yml">
+    <img src="https://github.com/ThomasRobertson/42-libft/workflows/Norm Check/badge.svg"
          alt="Norminette Action">
   </a> 
 </p>
