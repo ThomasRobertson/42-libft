@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/07/30 17:42:35 by troberts         ###   ########.fr       */
+/*   Updated: 2022/08/11 13:31:39 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef enum e_bool
+{
+	false = 0,
+	true = 1
+}	t_bool;
 
 /**
  * @brief Printf, except it's my own. Support c(har), s(tring), p(ointer),
@@ -730,5 +736,31 @@ long long	ft_atoll(const char *nptr);
  * @param n The integer to output
  */
 void		ft_putnbr(int n);
+
+/**
+ * @brief Print on fd a message then exit the program.
+ * 
+ * @param str String to print
+ * @param fd File Descriptor to output the message
+ * @param exit_code Exit code to use
+ */
+void		ft_exit_print(char *str, int fd, int exit_code);
+
+/**
+ * @brief Free a double pointer array of char
+ * 
+ * @param array_char Double pointer to free
+ */
+void		ft_free_double_ptr(char **array_char);
+
+/**
+ * @brief Allocates (with malloc(3)) and returns a new string, which is the
+ * result of the concatenation of 's1' and s2'. The two strings are then freed.
+ * 
+ * @param s1 The prefix string
+ * @param s2 The suffix string
+ * @return char* The new string, or NULL if the allocation fails.
+ */
+char		*ft_strjoin_free(char *s1, char *s2);
 
 #endif

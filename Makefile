@@ -6,7 +6,7 @@
 #    By: troberts <troberts@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by troberts          #+#    #+#              #
-#    Updated: 2022/07/11 16:39:38 by troberts         ###   ########.fr        #
+#    Updated: 2022/08/20 09:14:19 by troberts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ SRC=	$(SRC_DIR)/ft_atoi.c	\
 		$(SRC_DIR)/ft_atoll.c	\
 		$(SRC_DIR)/ft_bzero.c	\
 		$(SRC_DIR)/ft_calloc.c	\
+		$(SRC_DIR)/ft_exit_print.c	\
+		$(SRC_DIR)/ft_free_double_ptr.c	\
 		$(SRC_DIR)/ft_isalnum.c	\
 		$(SRC_DIR)/ft_isalpha.c	\
 		$(SRC_DIR)/ft_isascii.c	\
@@ -88,6 +90,7 @@ SRC=	$(SRC_DIR)/ft_atoi.c	\
 		$(SRC_DIR)/ft_strequ.c	\
 		$(SRC_DIR)/ft_striter.c	\
 		$(SRC_DIR)/ft_striteri.c	\
+		$(SRC_DIR)/ft_strjoin_free.c \
 		$(SRC_DIR)/ft_strjoin.c	\
 		$(SRC_DIR)/ft_strlcat.c	\
 		$(SRC_DIR)/ft_strlcpy.c	\
@@ -149,13 +152,13 @@ HEADER_LIBRARY =	@echo "${COLOR_YELLOW}\
 
 HEADER_CLEAN =		@echo "${COLOR_RED}\
 					\n/* ************************************************************************** */\
-					\n/*                                 CLEANING...                                */\
+					\n/*                              CLEANING LIBFT...                             */\
 					\n/* ************************************************************************** */\n\
 					${COLOR_END}"
 
 HEADER_FCLEAN =		@echo "${COLOR_RED}\
 					\n/* ************************************************************************** */\
-					\n/*                              FORCE CLEANING...                             */\
+					\n/*                           FORCE CLEANING LIBFT...                          */\
 					\n/* ************************************************************************** */\n\
 					${COLOR_END}"
 
@@ -196,9 +199,9 @@ cleanobj:
 cleanobjdir: cleanobj
 	@rm -rf $(OBJ_DIR)
 
-clean: header cleanobjdir
+clean: cleanobjdir
 	
-fclean: header clean
+fclean: clean
 	${HEADER_FCLEAN}
 	@rm -f $(NAME)
 
