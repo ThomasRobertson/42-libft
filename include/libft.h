@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/08/11 13:31:39 by troberts         ###   ########.fr       */
+/*   Updated: 2022/09/16 18:25:15 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,27 @@
 
 # define GNL_BUFFER_SIZE 4096
 
+# ifndef T_LIST
+#  define T_LIST
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
+# endif
+
+# ifndef T_BOOL
+#  define T_BOOL
+
 typedef enum e_bool
 {
 	false = 0,
 	true = 1
 }	t_bool;
+
+# endif
 
 /**
  * @brief Printf, except it's my own. Support c(har), s(tring), p(ointer),
