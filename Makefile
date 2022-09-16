@@ -6,7 +6,7 @@
 #    By: troberts <troberts@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by troberts          #+#    #+#              #
-#    Updated: 2022/08/20 09:14:19 by troberts         ###   ########.fr        #
+#    Updated: 2022/09/14 21:50:24 by troberts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,11 @@ SRC_DIR= src
 #                                .C & .H FILES                                 #
 # **************************************************************************** #
 
-SRC=	$(SRC_DIR)/ft_atoi.c	\
+SRC=	$(SRC_DIR)/ft_atoi_base.c	\
+		$(SRC_DIR)/ft_atoi.c	\
+		$(SRC_DIR)/ft_atol_base.c	\
 		$(SRC_DIR)/ft_atol.c	\
+		$(SRC_DIR)/ft_atoll_base.c	\
 		$(SRC_DIR)/ft_atoll.c	\
 		$(SRC_DIR)/ft_bzero.c	\
 		$(SRC_DIR)/ft_calloc.c	\
@@ -130,44 +133,17 @@ COLOR_CYAN		= \033[0;36m
 COLOR_WHITE		= \033[0;37m
 COLOR_END		= \033[m
 
-HEADER =			@echo "${COLOR_CYAN}\
-					\n/* ************************************************************************** */\
-					\n/*                                                                            */\
-					\n/*            :::      ::::::::                                               */\
-					\n/*          :+:      :+:    :+:                                               */\
-					\n/*        +:+ +:+         +:${HEADER_NAME}*/\
-					\n/*      +\#+  +:+       +\#+                                                    */\
-					\n/*    +\#+\#+\#+\#+\#+   +\#+                       Thomas Robertson                */\
-					\n/*         \#+\#    \#+\#                     <troberts@student.42.fr>            */\
-					\n/*        \#\#\#   \#\#\#\#\#\#\#\#.fr                                                   */\
-					\n/*                                                                            */\
-					\n/* ************************************************************************** */\n\
-					${COLOR_END}"
-
-HEADER_LIBRARY =	@echo "${COLOR_YELLOW}\
-					\n/* ************************************************************************** */\
-					\n/*                          CREATING STATIC LIBRARY...                        */\
-					\n/* ************************************************************************** */\n\
-					${COLOR_END}"
-
-HEADER_CLEAN =		@echo "${COLOR_RED}\
-					\n/* ************************************************************************** */\
-					\n/*                              CLEANING LIBFT...                             */\
-					\n/* ************************************************************************** */\n\
-					${COLOR_END}"
-
-HEADER_FCLEAN =		@echo "${COLOR_RED}\
-					\n/* ************************************************************************** */\
-					\n/*                           FORCE CLEANING LIBFT...                          */\
-					\n/* ************************************************************************** */\n\
-					${COLOR_END}"
-
 HEADER_NORM =		@echo "${COLOR_PURPLE}\
 					\n/* ************************************************************************** */\
 					\n/*                            CHECKING THE NORM...                            */\
 					\n/* ************************************************************************** */\n\
 					${COLOR_END}"
 
+ifndef ECHO
+HIT_TOTAL != ${MAKE} ${MAKECMDGOALS} --dry-run ECHO="HIT_MARK" | grep -c "HIT_MARK"
+HIT_COUNT = $(eval HIT_N != expr ${HIT_N} + 1)${HIT_N}
+ECHO = @printf "[${HIT_COUNT}/${HIT_TOTAL}] Compiling %-40s$(GREEN){done}\n$(RESET)" "$<:"
+endif
 
 # **************************************************************************** #
 #                                    RULES                                     #
@@ -176,10 +152,9 @@ HEADER_NORM =		@echo "${COLOR_PURPLE}\
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(HEADER)
-	$(HEADER_LIBRARY)
 	@$(AR) $(ARARCH) $@ $^
 	@$(AR) $(ARINDEX) $@
+	@$(ECHO) Compiling $@
 
 $(OBJ): | $(OBJ_DIR)
 
@@ -187,10 +162,8 @@ $(OBJ_DIR):
 	@mkdir -p $@
 
 $(OBJ): $(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@$(ECHO) Compiling $@
 	@$(CC) $(CFLAGS) -c $< -o $@
-
-header:
-	$(HEADER)
 
 cleanobj:
 	${HEADER_CLEAN}
@@ -205,7 +178,7 @@ fclean: clean
 	${HEADER_FCLEAN}
 	@rm -f $(NAME)
 
-norm: header
+norm:
 	${HEADER_NORM}
 	@echo "$(COLOR_CYAN)"
 	norminette $(SRC_DIR) | awk "!/: OK!/"
@@ -213,6 +186,6 @@ norm: header
 	norminette $(INCLUDES) | awk "!/: OK!/"
 	@echo "$(COLOR_END)"
 
-re: header fclean all
+re: fclean all
 
-.PHONY: all clean fclean re norm header cleanobj cleanobjdir
+.PHONY: all clean fclean re norm cleanobj cleanobjdir
