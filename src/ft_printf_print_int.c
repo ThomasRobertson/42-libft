@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_int.c                                        :+:      :+:    :+:   */
+/*   ft_printf_print_int.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:12:16 by troberts          #+#    #+#             */
-/*   Updated: 2022/07/11 13:44:10 by troberts         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:48:38 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	*_ft_printf_get_int(va_list args)
 	return (ft_itoa(integer));
 }
 
-int	_ft_printf_print_int(va_list args)
+int	_ft_printf_print_int(int fd, va_list args)
 {
 	char	*str;
 	int		len;
@@ -32,7 +32,7 @@ int	_ft_printf_print_int(va_list args)
 		return (PRINTF_ERROR_CODE);
 	}
 	len = ft_strlen(str);
-	ft_putstr_fd(str, 1);
+	ft_putstr_fd(str, fd);
 	free(str);
 	return (len);
 }

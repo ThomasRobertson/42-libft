@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_upper_hex.c                                  :+:      :+:    :+:   */
+/*   ft_printf_print_upper_hex.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 22:51:49 by troberts          #+#    #+#             */
-/*   Updated: 2022/07/11 13:45:19 by troberts         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:49:52 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*_ft_printf_get_upper_hex(va_list args)
 	return (str);
 }
 
-int	_ft_printf_print_upper_hex(va_list args)
+int	_ft_printf_print_upper_hex(int fd, va_list args)
 {
 	char	*str;
 	int		len;
@@ -41,7 +41,7 @@ int	_ft_printf_print_upper_hex(va_list args)
 		return (PRINTF_ERROR_CODE);
 	}
 	len = ft_strlen(str);
-	ft_putstr_fd(str, 1);
+	ft_putstr_fd(str, fd);
 	free(str);
 	return (len);
 }

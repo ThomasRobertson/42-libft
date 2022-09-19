@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   ft_printf_print_str.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 21:27:14 by troberts          #+#    #+#             */
-/*   Updated: 2022/07/11 13:44:53 by troberts         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:49:33 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ static char	*_ft_printf_get_str(va_list args)
 	return (str);
 }
 
-int	_ft_printf_print_str(va_list args)
+int	_ft_printf_print_str(int fd, va_list args)
 {
 	char	*str;
 
 	str = _ft_printf_get_str(args);
 	if (str == NULL)
 	{
-		write(1, "(null)", 6);
+		write(fd, "(null)", 6);
 		return (6);
 	}
-	ft_putstr_fd(str, 1);
+	ft_putstr_fd(str, fd);
 	return (ft_strlen(str));
 }
