@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/09/16 18:25:15 by troberts         ###   ########.fr       */
+/*   Updated: 2022/09/19 19:31:10 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,17 @@ typedef enum e_bool
  * @return int Number of bytes displayed.
  */
 int			ft_printf(const char *fmt, ...);
+
+/**
+ * @brief Dprintf, except it's my own. Support c(har), s(tring), p(ointer),
+ * d(igit), i(nt), u(nsigned int), x(lower base 16), X(upper base 16),
+ * %(print %).
+ * 
+ * @param fd fd to write to
+ * @param ... "string, %FLAG", variable_flag
+ * @return int Number of bytes displayed.
+ */
+int			ft_dprintf(int fd, const char *fmt, ...);
 
 /**
  * @brief Get the next line of a file descriptor WITH the newline.
