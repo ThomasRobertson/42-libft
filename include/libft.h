@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/09/24 20:34:11 by troberts         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:02:33 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -803,5 +803,12 @@ void		ft_error_exit(int fd, char *str, int exit_status);
  * @param return_status the return code to return
  */
 int			ft_error_return(int fd, char *str, int return_status);
+
+/**
+ * @brief Return the absolute value of an int
+ * 
+ * @param n int to convert to absolute value
+ */
+unsigned int	ft_abs(int n);
 
 #endif

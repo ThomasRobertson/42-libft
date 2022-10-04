@@ -6,7 +6,7 @@
 #    By: troberts <troberts@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by troberts          #+#    #+#              #
-#    Updated: 2022/09/24 19:14:46 by troberts         ###   ########.fr        #
+#    Updated: 2022/10/04 20:00:43 by troberts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRC_DIR= src
 #                                .C & .H FILES                                 #
 # **************************************************************************** #
 
-SRC=	$(SRC_DIR)/ft_atoi_base.c	\
+SRC=	$(SRC_DIR)/ft_abs.c	\
+		$(SRC_DIR)/ft_atoi_base.c	\
 		$(SRC_DIR)/ft_atoi.c	\
 		$(SRC_DIR)/ft_atol_base.c	\
 		$(SRC_DIR)/ft_atol.c	\
