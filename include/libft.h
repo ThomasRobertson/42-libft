@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/09/19 19:31:10 by troberts         ###   ########.fr       */
+/*   Updated: 2022/09/24 20:34:11 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <errno.h>
 
 # define GNL_BUFFER_SIZE 4096
 
@@ -783,5 +785,23 @@ void		ft_free_double_ptr(char **array_char);
  * @return char* The new string, or NULL if the allocation fails.
  */
 char		*ft_strjoin_free(char *s1, char *s2);
+
+/**
+ * @brief Print strerr(errno) on fd and then exit with the exit_status.
+ * 
+ * @param fd fd to display to
+ * @param str a string to display before the error
+ * @param exit_status the exit code to use by exit()
+ */
+void		ft_error_exit(int fd, char *str, int exit_status);
+
+/**
+ * @brief Print strerr(errno) on fd and then return with the return_status.
+ * 
+ * @param fd fd to display to
+ * @param str a string to display before the error
+ * @param return_status the return code to return
+ */
+int			ft_error_return(int fd, char *str, int return_status);
 
 #endif
