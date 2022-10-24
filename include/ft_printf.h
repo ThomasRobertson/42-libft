@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:04:22 by troberts          #+#    #+#             */
-/*   Updated: 2022/09/19 18:53:49 by troberts         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:39:46 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define LEN_CHAR 1
 # define PRINTF_ERROR_CODE -1
 
-int		_ft_printf_scan_args(int fd, va_list args, const char *fmt);
+int		_ft_printf_scan_args(va_list args, const char *fmt, int fd);
 
 /* ************************************************************************** */
 /*                            HELPERS TO CONVERSION                           */

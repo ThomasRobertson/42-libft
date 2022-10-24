@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:02:17 by troberts          #+#    #+#             */
-/*   Updated: 2022/09/19 18:54:42 by troberts         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:41:15 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	process_args(int fd, va_list args, const char *fmt)
 		return (PRINTF_ERROR_CODE);
 }
 
-int	_ft_printf_scan_args(int fd, va_list args, const char *fmt)
+int	_ft_printf_scan_args(va_list args, const char *fmt, int fd)
 {
 	int	i;
 	int	nbr_print;
@@ -68,7 +68,7 @@ int	ft_printf(const char *fmt, ...)
 	int		nbr_print;
 
 	va_start(args, fmt);
-	nbr_print = _ft_printf_scan_args(STDOUT_FILENO, args, fmt);
+	nbr_print = _ft_printf_scan_args(args, fmt, STDOUT_FILENO);
 	va_end(args);
 	if (nbr_print == PRINTF_ERROR_CODE)
 		return (PRINTF_ERROR_CODE);
