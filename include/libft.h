@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/10/04 20:22:42 by troberts         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:15:21 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,16 @@
  */
 int				ft_printf(const char *fmt, ...);
 
-/**
- * @brief Dprintf, except it's my own. Support c(har), s(tring), p(ointer),
- * d(igit), i(nt), u(nsigned int), x(lower base 16), X(upper base 16),
- * %(print %).
- * 
- * @param fd fd to write to
- * @param ... "string, %FLAG", variable_flag
- * @return int Number of bytes displayed.
- */
-int				ft_dprintf(int fd, const char *fmt, ...);
+// /**
+//  * @brief Dprintf, except it's my own. Support c(har), s(tring), p(ointer),
+//  * d(igit), i(nt), u(nsigned int), x(lower base 16), X(upper base 16),
+//  * %(print %).
+//  * 
+//  * @param fd fd to write to
+//  * @param ... "string, %FLAG", variable_flag
+//  * @return int Number of bytes displayed.
+//  */
+// int				ft_dprintf(int fd, const char *fmt, ...);
 
 /**
  * @brief Get the next line of a file descriptor WITH the newline.
@@ -789,6 +789,32 @@ void			ft_error_exit(int fd, char *str, int exit_status);
  * @param str a string to display before the error
  * @param return_status the return code to return
  */
+int				ft_error_return(int fd, char *str, int return_status);
+
+/**
+ * @brief Return the absolute value of an int
+ * 
+ * @param n int to convert to absolute value
+ */
+unsigned int	ft_abs(int n);
+
+/**
+ * @brief Print strerr(errno) on fd and then exit with the exit_status.
+ * 
+ * @param fd fd to display to
+ * @param str a string to display before the error
+ * @param exit_status the exit code to use by exit()
+ */
+void			ft_error_exit(int fd, char *str, int exit_status);
+
+/**
+ * @brief Print strerr(errno) on fd and then return with the return_status.
+ * 
+ * @param fd fd to display to
+ * @param str a string to display before the error
+ * @param return_status the return code to return
+ */
+
 int				ft_error_return(int fd, char *str, int return_status);
 
 /**
