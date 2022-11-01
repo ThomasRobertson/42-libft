@@ -18,7 +18,7 @@
 # endif
 
 # ifndef RETURN_SUCCESS
-#  define RETURN_SUCCESS 0
+#  define RETURN_SUCCESS 1
 # endif
 
 # ifndef RETURN_FAILURE
