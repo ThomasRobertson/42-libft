@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 21:01:35 by troberts          #+#    #+#             */
-/*   Updated: 2022/07/11 16:13:39 by troberts         ###   ########.fr       */
+/*   Updated: 2023/01/15 03:14:04 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ static ssize_t	get_read(int fd, char *buffer)
 	return (len_read);
 }
 
+static void	*free_line_and_return_null(char *line)
+{
+	free(line);
+	return (NULL);
+}
+
 static char	*get_line(char *buffer, int fd, int *nl_found)
 {
 	ssize_t	len_read;
@@ -58,7 +64,7 @@ static char	*get_line(char *buffer, int fd, int *nl_found)
 	ft_strlcpy(line, buffer, len_line + 1);
 	buff_tmp = ft_strdup((buffer) + len_line);
 	if (buff_tmp == NULL)
-		return (NULL);
+		return (free_line_and_return_null(line));
 	ft_strlcpy(buffer, buff_tmp, ft_strlen(buff_tmp) + 1);
 	free(buff_tmp);
 	return (line);
