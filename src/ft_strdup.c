@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 21:19:29 by troberts          #+#    #+#             */
-/*   Updated: 2022/05/02 15:46:59 by troberts         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:29:23 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strdup(const char *s)
 	char	*str;
 	size_t	len;
 
+	if (s == NULL)
+		return (NULL);
 	len = ft_strlen(s);
 	str = malloc(sizeof(*str) * len + 1);
 	if (str == NULL)
