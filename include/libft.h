@@ -6,7 +6,7 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by troberts          #+#    #+#             */
-/*   Updated: 2022/11/01 15:15:21 by troberts         ###   ########.fr       */
+/*   Updated: 2023/01/15 01:06:09 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -824,4 +824,33 @@ int				ft_error_return(int fd, char *str, int return_status);
  */
 unsigned int	ft_abs(int n);
 
+/**
+ * @brief convert a string to an integer. Undefined if string is bigger than an
+ * int
+ * 
+ * @param str string to convert
+ * @param base base to convert from
+ * @return int 
+ */
+int				ft_atoi_base(char *str, char *base);
+
+/**
+ * @brief convert a string to an long. Undefined if string is bigger than an
+ * long
+ * 
+ * @param str string to convert
+ * @param base base to convert from
+ * @return long 
+ */
+long			ft_atol_base(char *str, char *base);
+
+/**
+ * @brief convert a string to an long long. Undefined if string is bigger than
+ * an long long
+ * 
+ * @param str string to convert
+ * @param base base to convert from
+ * @return long long 
+ */
+long long		ft_atoll_base(char *str, char *base);
 #endif

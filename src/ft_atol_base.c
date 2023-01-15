@@ -6,15 +6,13 @@
 /*   By: troberts <troberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 23:13:13 by troberts          #+#    #+#             */
-/*   Updated: 2022/09/14 21:21:55 by troberts         ###   ########.fr       */
+/*   Updated: 2023/01/15 01:04:27 by troberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include "libft.h"
-
-int	ft_in_base(char c, char *base)
+static int	ft_in_base(char c, char *base)
 {
 	int	i;
 
